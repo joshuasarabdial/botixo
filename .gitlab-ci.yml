@@ -1,0 +1,51 @@
+image: node:10-buster
+
+stages:
+  - test
+  - lint
+  - production
+
+# cache node_modules between each stage of the pipeline so we don't have to download everytime
+# done by basing the cache off the commit hash that is being tested
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+# unit testing stage
+Unit Tests:
+  before_script:
+    - apt-get update
+    - apt-get install -y man bsdmainutils
+    - npm install
+  script:
+    - npm test
+  stage: test
+  only: # Only run tests on feature branches, never master.
+    refs:
+      - branches
+
+# linting stage
+Lint:
+  before_script:
+    - npm install
+  script:
+    - npm run lint
+  stage: lint
+  only: # Only run tests on feature branches, never master.
+    refs:
+      - branches
+
+# production deploy stage
+Production:
+    type: deploy
+    stage: production
+    image: ruby:latest
+    before_script:
+      - apt-get update
+      - apt-get install -y ruby-dev
+      - gem install dpl
+    script:
+      - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+    only: # only deploy from master
+      - master

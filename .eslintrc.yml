@@ -1,0 +1,21 @@
+env:
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+globals:
+  "describe": false
+  "it": false
+  "reply": false
+  "beforeEach": false
+  "mongoStorage": false
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+rules: {
+  "no-global-assign":["error", {"exceptions": [mongoStorage]}],
+  "no-unused-vars": off,
+  "no-redeclare": off,
+  semi: ["error", "always"]
+}

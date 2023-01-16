@@ -1,0 +1,33 @@
+{
+  "name": "botkit-echobotixo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "mocha tests/*",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "botbuilder-adapter-slack": "^1.0.4",
+    "botbuilder-storage-mongodb": "^0.9.5",
+    "botkit": "^4.5.0",
+    "botkit-mock": "^4.0.0",
+    "botkit-plugin-cms": "^1.0.2",
+    "cheerio": "^1.0.0-rc.3",
+    "child-process-async": "^1.0.1",
+    "dotenv": "^7.0.0",
+    "mocha": "^6.2.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

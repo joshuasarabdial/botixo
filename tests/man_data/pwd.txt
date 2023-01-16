@@ -1,0 +1,15 @@
+
+PWD(1)                    BSD General Commands Manual                   PWD(1)
+
+NAME
+     pwd -- return working directory name
+
+SYNOPSIS
+     pwd [-L | -P]
+
+DESCRIPTION
+     The pwd utility writes the absolute pathname of the current working
+     directory to the standard output.
+
+     Some shells may provide a builtin pwd command which is similar or identi-
+     cal to this utility.  Consult the builtin(1) manual page.

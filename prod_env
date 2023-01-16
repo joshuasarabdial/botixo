@@ -1,0 +1,18 @@
+PORT=8765
+
+# Client ID
+clientId=791085767639.828392236196
+
+# Client Secret
+clientSecret=ff3e55802dbbc5f5a9e28481004e5311
+
+# Verification Token
+verificationToken=p5trDZcnSlZ0nkWU7pGSz3p7
+
+# Signing Secret
+clientSigningSecret=703e832040100bcd61c2be244743a242
+
+# Bot User OAuth Access Token
+botToken=xoxb-791085767639-831069510438-C6YWCae2uIrmQv1rUUsNwg5n
+
+MONGO_URI=
